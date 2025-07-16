@@ -65,15 +65,14 @@ R² Score
 ## 🧪 Results
 Model Type	R² Score	Notes
 Linear Regression	0.727	Performed best overall ✅
-Polynomial Regression (deg 2)	0.734	Slightly better, but risk of overfitting ⚠️
-Polynomial Regression (deg 3)	0.629	Lower performance due to complexity ❌
 
 ## 📘 Example Prediction Output
- Actual_Exam_Score  Predicted_Exam_Score
-                65                65.38
-                71                71.12
-                64                65.14
-                66                66.95
+ (Actual_Exam_Score,  Predicted_Exam_Score)
+                (65,                65.38)
+                (71,                71.12)
+               (64,               65.14)
+                (66,                66.95)
+
 🚀 Future Improvements
 Feature interaction analysis
 
