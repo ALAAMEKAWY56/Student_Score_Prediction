@@ -1,87 +1,106 @@
-# Student_Score_Prediction
-## 📊 Student Exam Score Prediction
-This project focuses on predicting students' final exam scores based on various academic, behavioral, and social factors. Using Linear Regression and Polynomial Regression, we analyze and model the relationship between features like hours studied, attendance, motivation, previous scores, and more.
+
+# 📊 Student Exam Score Prediction using Regression
+
+This project focuses on predicting students' final exam scores using various performance-related features such as study hours, attendance, previous scores, and socio-academic factors.
+
+The dataset used is the **Student Performance Factors** dataset from Kaggle, with 6,600+ records and 20 features.
+
+---
+
+## 🔧 Tools & Libraries Used
+
+- Python (Jupyter Notebook)
+- Pandas, NumPy
+- Scikit-learn (Linear & Polynomial Regression)
+- Matplotlib & Seaborn for Visualization
+
+---
+
+## 📌 Project Steps
+
+1. **Data Cleaning**
+   - Handled missing values (filled with mode).
+   - Applied **outlier capping** using the IQR method (with a relaxed multiplier of `2.0`) to preserve extreme but realistic scores.
+
+2. **Exploratory Data Analysis**
+   - Correlation heatmap for feature selection.
+   - KDE, histogram, and line plots for variable trends.
+   - Categorical feature distributions using pie charts and bar plots.
+
+3. **Feature Engineering**
+   - One-hot encoding for categorical variables.
+   - Standardization for numerical features like `Hours_Studied`, `Attendance`, and `Previous_Scores`.
+
+4. **Modeling**
+   - **Linear Regression** (Baseline)
+   - **Polynomial Regression** (Degree 2 & 3) for comparison
+
+5. **Evaluation Metrics**
+   - Mean Squared Error (MSE)
+   - Mean Absolute Error (MAE)
+   - R² Score
+
+6. **Cross-Validation (5-Fold)**
+
+---
+
+## 📈 Cross-Validation Results (5 Folds)
+
+| Metric | Fold 1 | Fold 2 | Fold 3 | Fold 4 | Fold 5 | Mean |
+|--------|--------|--------|--------|--------|--------|------|
+| **MSE** | 0.490 | 0.441 | 0.488 | 0.464 | 0.471 | **0.471** |
+| **MAE** | 0.565 | 0.535 | 0.569 | 0.555 | 0.556 | **0.556** |
+| **R²**  | 0.952 | 0.960 | 0.957 | 0.958 | 0.959 | **0.957** |
+
+✅ These results show **high consistency** across all folds, indicating that the model is **generalizing well** and **not overfitting**.
+
+---
+
+## 🔍 Actual vs Predicted (Sample Output)
+
+| Actual_Exam_Score | Predicted_Exam_Score |
+|-------------------|----------------------|
+| 68                | 68.78                |
+| 64                | 63.47                |
+| 71                | 70.29                |
+| 64                | 65.23                |
+| 66                | 66.29                |
+| 66                | 65.20                |
+| 69                | 69.43                |
+| 68                | 68.67                |
+| 62                | 62.01                |
+| 71                | 71.45                |
+
+✅ As seen above, predictions are **very close to actual scores** with minimal error.
+
+---
+
+## 📌 Bonus
+- Polynomial Regression (Degree 2) improved R² slightly.
+- Degree 3 introduced overfitting with a **lower R²**, so Degree 2 was chosen.
+
+---
+
+## 📤 How to Use
+
+1. Clone this repo
+2. Run the Jupyter Notebook
+3. Modify or add student records in the input cell to get predictions
+
+---
+
+## 🤖 Future Improvements
+
+- Add decision trees or ensemble models
+- Deploy via Flask web app
+- Predict categorical performance level (e.g., Pass / Fail)
+
+---
 
 ## 📁 Dataset
-Source: Student Performance Factors - Kaggle
+> Source: [Kaggle - Student Performance Factors](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams)
 
-Size: 6,607 rows × 20 columns
+---
 
-Target Variable: Exam_Score
-
-Key Features:
-
-Hours_Studied, Attendance, Previous_Scores
-
-Categorical variables: Parental_Involvement, Internet_Access, School_Type, etc.
-
-## 🎯 Project Goals
-Clean and preprocess the dataset (handle missing values, encoding)
-
-Explore relationships between features and the exam score
-
-Train a Linear Regression model to predict Exam_Score
-
-Evaluate the model using MSE, MAE, and R² Score
-
-Try Polynomial Regression (degree 2 & 3) as a bonus and compare performance
-
-## 🔧 Tools & Libraries
-Python 🐍
-
-Pandas for data handling
-
-Matplotlib and Seaborn for visualization
-
-Scikit-learn for modeling and evaluation
-
-## 📈 Key Steps
-1. 📊 Exploratory Data Analysis (EDA)
-Checked for missing values
-
-Plotted distributions & relationships (histograms, scatter plots, regression lines)
-
-Correlation analysis to select top influencing features
-
-2. 🧹 Data Cleaning
-Filled missing categorical values with the mode
-
-Applied One-Hot Encoding to categorical features
-
-3. 🧠 Model Building
-Split data into training/testing sets (80/20)
-
-Trained Linear Regression and evaluated performance
-
-Added Polynomial Regression (degree 2 & 3) for comparison
-
-4. 📊 Evaluation Metrics
-Mean Squared Error (MSE)
-
-Mean Absolute Error (MAE)
-
-R² Score
-
-## 🧪 Results
-Model Type	R² Score	Notes
-Linear Regression	0.727	Performed best overall ✅
-
-## 📘 Example Prediction Output
- (Actual_Exam_Score,  Predicted_Exam_Score)
-                (65,                65.38)
-                (71,                71.12)
-               (64,               65.14)
-                (66,                66.95)
-
-🚀 Future Improvements
-Feature interaction analysis
-
-Try regularization (Ridge/Lasso)
-
-Handle outliers for more robust results
-
-Tune polynomial features selectively (not on full encoded data)
-
-## 📄 License
-This project is for educational purposes only.
-
+## 📬 Contact
+For any inquiries or feedback, feel free to reach out via GitHub Issues.
