@@ -95,6 +95,12 @@ The dataset used is the **Student Performance Factors** dataset from Kaggle, wit
 - Deploy via Flask web app
 - Predict categorical performance level (e.g., Pass / Fail)
 
+
+## 🙋‍♀️ Author
+
+**Alaa Mohamed Mekawi**  
+Computer Engineer | Data & AI Enthusiast
+
 ---
 
 ## 📁 Dataset
